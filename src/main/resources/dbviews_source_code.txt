@@ -1,0 +1,58 @@
+select * from organization.organization, organization.orgparams where organization.org_id = orgparams.org_id; 
+CREATE VIEW organization_view as select org.org_ref_name,org.org_name,org.status,par.* from organization.organization org, organization.orgparams par where org.org_id = par.org_id;
+select * from organization_view;
+create or replace view vehicleinfo as select  vehicle.vehicle_id,vehicle.org_ref_name,vehicle.vehicle_regn_number as vehicle_number, vehicle.vehicle_type as vehicle_type, device.imei_number as imei, driver.full_name as driver_name,driver.contact_number as driver_number from vehicle.vehicle LEFT JOIN vehicle.device on vehicle.dev_fk = device.device_id LEFT JOIN vehicle.driver on vehicle.dv_fk = driver.driver_id;
+select * from vehicleinfo;
+
+
+scorpiousdbviews
+
+
+
+CREATE VIEW organization_view as 
+select org.org_ref_name,
+       org.org_name,
+       org.status,par.* 
+ from organization.organization org, 
+      organization.orgparams par 
+where org.org_id = par.org_id;
+
+
+
+create or replace view vehicleinfo as 
+select  vehicle.vehicle_id,
+	vehicle.org_ref_name,
+	vehicle.vehicle_regn_number as vehicle_number, 
+	vehicle.vehicle_type as vehicle_type, 
+	device.imei_number as imei, 
+	driver.full_name as driver_name,
+	driver.contact_number as driver_number 
+from vehicle.vehicle LEFT JOIN vehicle.device on vehicle.dev_fk = device.device_id 
+		     LEFT JOIN vehicle.driver on vehicle.dv_fk = driver.driver_id;	
+
+
+
+
+
+
+
+
+CREATE VIEW organization_view as 
+select org.org_ref_name,
+       org.org_name,
+       org.status,par.* 
+ from organization.organization org, 
+      organization.orgparams par 
+where org.org_id = par.org_id;
+
+
+create or replace view vehicleinfo as 
+select  vehicle.vehicle_id,
+	vehicle.org_ref_name,
+	vehicle.vehicle_regn_number as vehicle_number, 
+	vehicle.vehicle_type as vehicle_type, 
+	device.imei_number as imei, 
+	driver.full_name as driver_name,
+	driver.contact_number as driver_number 
+from vehicle.vehicle LEFT JOIN vehicle.device on vehicle.dev_fk = device.device_id 
+		     LEFT JOIN vehicle.driver on vehicle.dv_fk = driver.driver_id;	
