@@ -18,7 +18,7 @@ spring:
         enabled: DETECT
         
   datasource:
-    url: jdbc:mysql://localhost:3306/dbviews
+    url: jdbc:mysql://localhost:3306/redisviews
     username: root
     password: password
     dbcp2:

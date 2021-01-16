@@ -20,7 +20,7 @@ public class RedisOrganizationParametersRepository {
     }
 
     public void save(OrganizationView organizationView) {
-        hashOperations.put(KEY, String.valueOf(organizationView.getOrgName()), organizationView);
+        hashOperations.put(KEY, String.valueOf(organizationView.getOrgRefName()), organizationView);
     }
 }
 
